@@ -18,11 +18,11 @@ export const SOCIALS = [
 ];
 
 export const NAVBAR = [
-  // {
-  //   to: "/travels",
-  //   icon: "material-symbols:travel",
-  //   text: "travels",
-  // },
+  {
+    to: "/travels",
+    icon: "material-symbols:travel",
+    text: "travels",
+  },
   // {
   //   to: "/blog",
   //   icon: "ri:article-line",
