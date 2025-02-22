@@ -11,10 +11,12 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@nuxt/eslint": "^1.1.0",
     "@nuxtjs/tailwindcss": "^6.12.2",
+    "eslint": "^9.21.0",
     "nuxt": "^3.8.2",
     "nuxt-icon": "^0.6.7",
-    "typescript": "^5.3.3",
+    "typescript": "^5.7.3",
     "vue": "^3.3.10",
     "vue-router": "^4.2.5",
     "vue-tsc": "^1.8.25"
