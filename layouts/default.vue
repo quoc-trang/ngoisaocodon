@@ -10,6 +10,6 @@
 
 <script lang="ts" setup>
 useHead({
-  title: "quoc-trang",
-});
+  title: 'quoc-trang',
+})
 </script>

@@ -11,5 +11,13 @@ export default defineNuxtRouteMiddleware((to, _) => {
         return navigateTo('/pc/home')
       }
     }
+
+    if (isMobile && to.path.includes('/pc')) {
+      return navigateTo('/sd/home')
+    }
+
+    if (!isMobile && to.path.includes('/sd')) {
+      return navigateTo('/pc/home')
+    }
   }
 })
