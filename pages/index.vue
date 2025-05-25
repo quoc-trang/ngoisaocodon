@@ -1,18 +1,20 @@
 <template>
-  <section class="flex flex-col items-start relative text-2xl">
-    <div class="mt-10 ">
+  <section class="flex flex-col items-start relative text-sm">
+    <div class="mt-10">
       <h1 class="font-bold inline-block text-3xl animate-slide-up">
         Le Quoc Trang
       </h1>
       <ol class="mt-3 animate-slide-up list-inside list-disc">
         <h1 class="font-bold">
-          I'm
+          I'm a
         </h1>
         <li class="pl-3">
-          a web development software engineer based in Vietnam, skilled in both front-end and back-end development
+          Vietnam-based web development software engineer with expertise in both
+          front-end and back-end.
         </li>
         <li class="pl-3">
-          passionate about being a full-stack developer, using technology to solve real-world challenges.
+          My aspiration is to grow into a full-stack developer, utilizing
+          technology to tackle real-world challenges.
         </li>
       </ol>
       <ol class="list-disc animate-slide-up list-inside mt-3">
