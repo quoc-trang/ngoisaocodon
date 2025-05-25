@@ -4,9 +4,13 @@
     aria-label="Toggle dark mode"
     @click="toggleDarkMode"
   >
-    <Icon
-      :name="isDark ? 'ph:sun-bold' : 'ph:moon-bold'"
-      class="w-6 h-6 text-gray-800 dark:text-gray-200"
+    <IconLight
+      v-if="!isDark"
+      class="w-6 h-6 text-gray-800"
+    />
+    <IconDark
+      v-else
+      class="w-6 h-6 text-gray-200"
     />
   </button>
 </template>

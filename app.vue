@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white dark:bg-secondary">
-    <div class="fixed top-4 right-4">
+    <div class="fixed top-4 right-4 z-50">
       <IconDarkModeToggle />
     </div>
     <NuxtLayout>

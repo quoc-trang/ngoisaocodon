@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-col items-start relative text-sm dark:text-white">
+  <section class="flex flex-col items-start relative text-base dark:text-white">
     <div class="mt-10">
       <h1 class="font-bold inline-block text-3xl animate-slide-up">
         Le Quoc Trang
