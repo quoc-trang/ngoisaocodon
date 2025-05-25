@@ -1,58 +1,53 @@
 <template>
-  <section class="flex flex-col items-start relative text-sm">
+  <section class="flex flex-col items-start relative text-sm dark:text-white">
     <div class="mt-10">
       <h1 class="font-bold inline-block text-3xl animate-slide-up">
         Le Quoc Trang
       </h1>
       <ol class="mt-3 animate-slide-up list-inside list-disc">
         <h1 class="font-bold">
-          I'm a
+          About Me
         </h1>
         <li class="pl-3">
-          Vietnam-based web development software engineer with expertise in both
-          front-end and back-end.
+          A frontend developer based in Vietnam, currently expanding my expertise into backend development through hands-on experience at work.
         </li>
         <li class="pl-3">
-          My aspiration is to grow into a full-stack developer, utilizing
-          technology to tackle real-world challenges.
+          Aspiring to become a full-stack developer who creates impactful solutions to real-world problems.
         </li>
       </ol>
       <ol class="list-disc animate-slide-up list-inside mt-3">
         <h1 class="font-bold">
-          Throughout my career
+          Professional Journey
         </h1>
         <li class="pl-3">
-          I am always seeking opportunities to enhance my skills
-          and mindset.
+          Continuously expanding my technical expertise and professional mindset.
         </li>
         <li class="pl-3">
-          Collaborating with intelligent colleagues across various companies has
-          provided me with diverse perspectives and valuable insights.
+          Working alongside talented professionals has enriched my perspective and enhanced my problem-solving abilities.
         </li>
         <li class="pl-3">
-          Each interaction has been a learning experience, and I deeply value
-          the guidance and advice they've shared.
+          Every collaboration has been a valuable learning experience, and I'm grateful for the mentorship and insights shared.
         </li>
       </ol>
 
       <ol class="list-disc animate-slide-up list-inside mt-3">
         <h1 class="font-bold">
-          Outside of coding, I enjoy
+          Beyond Coding
         </h1>
         <li class="pl-3">
-          Spending time with my family, friends...
+          Cherishing quality time with family and friends.
         </li>
         <li class="pl-3">
-          Learning languages.
+          Exploring new languages and cultures.
         </li>
         <li class="pl-3">
-          Watching movies, listening to music.
+          Enjoying movies and music in my free time.
         </li>
       </ol>
 
       <div class="mt-3 animate-slide-up animation-delay-100">
         <h1 class="mt-2">
-          Find me on
+          Connect With Me
         </h1>
         <ul class="flex gap-x-1">
           <li
@@ -69,6 +64,7 @@
                 <Icon
                   :name="social.icon"
                   size="2em"
+                  class="text-gray-800 dark:text-gray-200"
                 />
               </div>
             </NuxtLink>

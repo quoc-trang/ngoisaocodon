@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 
 const extendTheme = {
-  "colors": {
-    "secondary": "#020420",
-    "primary": "#00DC82",
+  colors: {
+    secondary: '#020420',
+    primary: '#00DC82',
   },
   keyframes: {
     'slide-up': {
@@ -22,7 +22,11 @@ const extendTheme = {
   },
 }
 
-export const content = ['./src/components/**/*.{vue,js,ts}', './src/layouts/**/*.{vue,js,ts}', './src/pages/**/*.{vue,js,ts}']
+export const content = [
+  './src/components/**/*.{vue,js,ts}',
+  './src/layouts/**/*.{vue,js,ts}',
+  './src/pages/**/*.{vue,js,ts}',
+]
 export const theme = {
   extend: extendTheme,
 }
