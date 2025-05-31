@@ -6,11 +6,11 @@
   >
     <IconLight
       v-if="!isDark"
-      class="w-6 h-6 text-gray-200"
+      class="w-6 h-6 text-gray-800"
     />
     <IconDark
       v-else
-      class="w-6 h-6 text-gray-800"
+      class="w-6 h-6 text-gray-200"
     />
   </button>
 </template>
