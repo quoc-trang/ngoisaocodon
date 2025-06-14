@@ -162,8 +162,6 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted } from 'vue'
-
 interface Experience {
   title: string
   company: string

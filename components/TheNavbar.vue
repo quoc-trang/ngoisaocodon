@@ -11,6 +11,13 @@
             Home
           </NuxtLink>
           <NuxtLink
+            to="/blog"
+            class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 dark:text-white hover:text-gray-500 dark:hover:text-gray-300"
+            active-class="border-b-2 border-primary text-primary dark:text-primary"
+          >
+            Blog
+          </NuxtLink>
+          <NuxtLink
             to="/experience"
             class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 dark:text-white hover:text-gray-500 dark:hover:text-gray-300"
             active-class="border-b-2 border-primary text-primary dark:text-primary"
