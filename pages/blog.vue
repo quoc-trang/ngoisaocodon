@@ -36,6 +36,60 @@
             </button>
           </div>
         </div>
+
+        <!-- Create Post Form for logged-in users -->
+        <div
+          v-if="isAuthenticated"
+          class="mt-4"
+        >
+          <button
+            v-if="!showCreatePost"
+            class="w-full px-4 py-2 text-left text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors"
+            @click="showCreatePost = true"
+          >
+            Create a new post...
+          </button>
+          <form
+            v-else
+            class="space-y-4"
+            @submit.prevent="handleCreatePost"
+          >
+            <div>
+              <input
+                v-model="newPost.title"
+                type="text"
+                placeholder="Post title"
+                required
+                class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-700 dark:text-white"
+              >
+            </div>
+            <div>
+              <textarea
+                v-model="newPost.content"
+                placeholder="What's on your mind?"
+                required
+                rows="4"
+                class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-700 dark:text-white resize-none"
+              />
+            </div>
+            <div class="flex justify-end space-x-3">
+              <button
+                type="button"
+                class="px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors"
+                @click="showCreatePost = false"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
+                :disabled="isCreatingPost"
+              >
+                {{ isCreatingPost ? 'Creating...' : 'Create Post' }}
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
 
       <h1 class="font-bold text-2xl mb-4 text-gray-800 dark:text-white">
@@ -187,6 +241,13 @@ const posts = ref<Post[]>([])
 const currentPage = ref(1)
 const hasMorePages = ref(true)
 
+const showCreatePost = ref(false)
+const isCreatingPost = ref(false)
+const newPost = ref({
+  title: '',
+  content: '',
+})
+
 const handleLogin = async () => {
   const success = await login(loginForm.value.email, loginForm.value.password)
   if (success) {
@@ -238,6 +299,37 @@ const formatDate = (dateString: string) => {
       month: 'short',
       day: 'numeric',
     })
+  }
+}
+
+const handleCreatePost = async () => {
+  try {
+    isCreatingPost.value = true
+    const token = localStorage.getItem('token')
+    const response = await fetch('http://localhost:3000/api/posts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+      body: JSON.stringify(newPost.value),
+    })
+
+    if (!response.ok) {
+      throw new Error('Failed to create post')
+    }
+
+    // Reset form and refresh posts
+    newPost.value = { title: '', content: '' }
+    showCreatePost.value = false
+    currentPage.value = 1
+    await fetchPosts(currentPage.value)
+  }
+  catch (error) {
+    console.error('Error creating post:', error)
+  }
+  finally {
+    isCreatingPost.value = false
   }
 }
 

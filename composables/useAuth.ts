@@ -24,7 +24,7 @@ export const useAuth = () => {
       }
 
       const data = await response.json()
-      user.value = { email: data.email, token: data.token }
+      user.value = { email: data.user.email, token: data.token }
       isAuthenticated.value = true
       localStorage.setItem('token', data.token)
       return true
@@ -46,8 +46,6 @@ export const useAuth = () => {
     if (token) {
       // You might want to validate the token with your backend here
       isAuthenticated.value = true
-      // For now, we'll just set a placeholder email
-      user.value = { email: 'user@example.com', token }
     }
   }
 
