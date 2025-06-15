@@ -212,6 +212,7 @@
 
 <script setup lang="ts">
 import { useAuth } from '~/composables/useAuth'
+import { API_URL } from '~/config/api'
 
 interface Post {
   id: number
@@ -258,7 +259,7 @@ const handleLogin = async () => {
 
 const fetchPosts = async (page: number) => {
   try {
-    const response = await fetch(`http://localhost:3000/api/posts?page=${page}&limit=10`)
+    const response = await fetch(`${API_URL}/api/posts?page=${page}&limit=10`)
     const data: PostsResponse = await response.json()
 
     if (page === 1) {
@@ -306,7 +307,7 @@ const handleCreatePost = async () => {
   try {
     isCreatingPost.value = true
     const token = localStorage.getItem('token')
-    const response = await fetch('http://localhost:3000/api/posts', {
+    const response = await fetch(`${API_URL}/api/posts`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
