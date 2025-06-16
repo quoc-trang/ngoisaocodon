@@ -20,13 +20,23 @@
             </div>
           </div>
           <div>
-            <button
+            <div
               v-if="!isAuthenticated"
-              class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
-              @click="showLoginModal = true"
+              class="flex space-x-3"
             >
-              Login
-            </button>
+              <button
+                class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
+                @click="showLoginModal = true"
+              >
+                Login
+              </button>
+              <button
+                class="px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary/10 transition-colors"
+                @click="showRegisterModal = true"
+              >
+                Register
+              </button>
+            </div>
             <button
               v-else
               class="px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors"
@@ -206,6 +216,88 @@
           </form>
         </div>
       </div>
+
+      <!-- Register Modal -->
+      <div
+        v-if="showRegisterModal"
+        class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center"
+        @click="showRegisterModal = false"
+      >
+        <div
+          class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-2xl max-w-md w-full mx-4"
+          @click.stop
+        >
+          <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
+            Register
+          </h2>
+          <form
+            class="space-y-4"
+            @submit.prevent="handleRegister"
+          >
+            <div>
+              <label
+                for="register-email"
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+              >
+                Email
+              </label>
+              <input
+                id="register-email"
+                v-model="registerForm.email"
+                type="email"
+                required
+                class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-700 dark:text-white"
+              >
+            </div>
+            <div>
+              <label
+                for="register-password"
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+              >
+                Password
+              </label>
+              <input
+                id="register-password"
+                v-model="registerForm.password"
+                type="password"
+                required
+                class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-700 dark:text-white"
+              >
+            </div>
+            <div>
+              <label
+                for="confirm-password"
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+              >
+                Confirm Password
+              </label>
+              <input
+                id="confirm-password"
+                v-model="registerForm.confirmPassword"
+                type="password"
+                required
+                class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-700 dark:text-white"
+              >
+            </div>
+            <div class="flex justify-end space-x-3">
+              <button
+                type="button"
+                class="px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors"
+                @click="showRegisterModal = false"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
+                :disabled="isRegistering"
+              >
+                {{ isRegistering ? 'Registering...' : 'Register' }}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
     </main>
   </div>
 </template>
@@ -236,6 +328,14 @@ const showLoginModal = ref(false)
 const loginForm = ref({
   email: '',
   password: '',
+})
+
+const showRegisterModal = ref(false)
+const isRegistering = ref(false)
+const registerForm = ref({
+  email: '',
+  password: '',
+  confirmPassword: '',
 })
 
 const posts = ref<Post[]>([])
@@ -331,6 +431,45 @@ const handleCreatePost = async () => {
   }
   finally {
     isCreatingPost.value = false
+  }
+}
+
+const handleRegister = async () => {
+  if (registerForm.value.password !== registerForm.value.confirmPassword) {
+    alert('Passwords do not match')
+    return
+  }
+
+  try {
+    isRegistering.value = true
+    const response = await fetch(`${API_URL}/api/auth/register`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: registerForm.value.email,
+        password: registerForm.value.password,
+      }),
+    })
+
+    if (!response.ok) {
+      throw new Error('Registration failed')
+    }
+
+    // After successful registration, log the user in
+    const success = await login(registerForm.value.email, registerForm.value.password)
+    if (success) {
+      showRegisterModal.value = false
+      registerForm.value = { email: '', password: '', confirmPassword: '' }
+    }
+  }
+  catch (error) {
+    console.error('Registration error:', error)
+    alert('Registration failed. Please try again.')
+  }
+  finally {
+    isRegistering.value = false
   }
 }
 
