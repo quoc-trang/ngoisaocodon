@@ -28,11 +28,6 @@ export const NAVBAR = [
   //   icon: "material-symbols:travel",
   //   text: "travels",
   // },
-  // {
-  //   to: "/blog",
-  //   icon: "ri:article-line",
-  //   text: "Blog",
-  // },
   {
     to: '/projects',
     // icon: "ri:file-paper-2-line",
