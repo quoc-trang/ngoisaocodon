@@ -1,109 +1,67 @@
-# Personal Portfolio Website
+# Hi there, I'm Le Quoc Trang! 👋
 
-A modern, responsive personal portfolio website built with Nuxt.js 3 and Tailwind CSS.
+I'm a **Frontend Developer** based in Vietnam, passionate about building responsive, user-friendly web applications and expanding my expertise into backend and cloud architecture.
 
-## 🚀 Tech Stack
+Currently working at **Rakuten Fintech Vietnam**.
 
-- **Framework**: Nuxt.js 3.15.0
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Icons**: Nuxt Icon
-- **Linting**: ESLint
+---
 
-## 🎨 Features
+## 🛠️ Tech Stack
 
-- Responsive design
-- Modern UI with animations
-- Dark mode support
-- Social media integration
-- Custom color scheme
-- SEO friendly
+**Frontend:**
+![Vue.js](https://img.shields.io/badge/Vue.js-35495E?style=flat&logo=vuedotjs&logoColor=4FC08D)
+![Nuxt.js](https://img.shields.io/badge/Nuxt-002E3B?style=flat&logo=nuxtdotjs&logoColor=00DC82)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
 
-## 🛠️ Development
+**Backend & Cloud:**
+![Node.js](https://img.shields.io/badge/Node.js-43853D?style=flat&logo=node.js&logoColor=white)
+![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=flat&logo=google-cloud&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat&logo=postgresql&logoColor=white)
 
-### Prerequisites
+---
 
-- Node.js (Latest LTS version recommended)
-- npm or yarn
+## 💼 Experience
 
-### Installation
+- **Startups & Fintech**: Experienced in high-growth environments like **Rakuten**, **Raksul**, and **NFQ Asia**.
+- **Roles**: Frontend Developer / Fullstack Developer.
+- **Focus**: Performance optimization, scalable architecture, and clean UI/UX.
 
-1. Clone the repository
+---
 
-```bash
-git clone <repository-url>
-cd quoc-trang
-```
+## 🚀 Featured Projects
 
-2. Install dependencies
+### [📝 Takenotes App](https://takenotes-frontend-619846684958.asia-southeast1.run.app)
+A production-ready full-stack note-taking application.
+- **Stack**: Nuxt.js, Node.js (Express), PostgreSQL, Prisma, Docker.
+- **Infrastructure**: Google Cloud Run, Cloud SQL, Cloud Storage.
+- **Key Features**: JWT Auth, CI/CD pipelines, RESTful APIs.
 
-```bash
-npm install
-```
+### [🎨 Landing Page Collection](https://quoc-trang.github.io/landing-page-collection/)
+A showcase of 10 distinct, responsive landing pages built with pure HTML/CSS.
+- **Highlights**: SaaS Platform, Cyberpunk Terminal, Luxury Real Estate, and more.
+- **Goal**: Demonstrating versatile design implementation skills.
 
-3. Start development server
+---
 
-```bash
-npm run dev
-```
+## 🏆 Certifications
 
-The application will be available at:
+- **Google Cloud Associate Cloud Engineer** (2023)
+- **Certified LeSS Practitioner** (Large-Scale Scrum)
+- **Certified Vue.js Developer** (Vue School)
 
-- Local: http://localhost:3000
-- Network: http://[your-ip]:3000
+---
 
-### Development Tools
+## 📫 Connect with me
 
-- **Nuxt DevTools**: Press `Shift + Option + D` in the browser
-- **Tailwind Viewer**: Available at `http://localhost:3000/_tailwind/`
+<a href="https://www.linkedin.com/in/quoctrang2701/">
+  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+</a>
+<a href="mailto:lequoctrang44@gmail.com">
+  <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+</a>
 
-## 🎯 Project Structure
-
-```
-├── assets/          # Static assets
-├── components/      # Vue components
-├── pages/          # Application pages
-├── public/         # Public static files
-├── server/         # Server-side code
-├── constants/      # Constant values
-└── layouts/        # Page layouts
-```
-
-## 🎨 Customization
-
-### Colors
-
-- Primary: `#00DC82` (Bright Green)
-- Secondary: `#020420` (Dark Blue/Black)
-
-### Animations
-
-- Slide-up animation for content sections
-- Custom keyframes and animation configurations
-
-## 📝 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 👨‍💻 Author
-
-Le Quoc Trang
-
-- Vietnam-based web development software engineer
-- Full-stack developer
-
-```
-
-```
-
-I use daily: `.vue`, `.jsx`, `.ts`, `.js`
-
-```
-
-```
-
-Dedicated to learning new technologies and best practices to continually improve as an engineer
-
-```
-
-```
+<!--
+**quoc-trang/quoc-trang** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+-->
