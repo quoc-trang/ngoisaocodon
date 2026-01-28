@@ -17,6 +17,20 @@
           >
             Experience
           </NuxtLink>
+          <NuxtLink
+            to="/projects"
+            class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 dark:text-white hover:text-gray-500 dark:hover:text-gray-300"
+            active-class="border-b-2 border-primary text-primary dark:text-primary"
+          >
+            Projects
+          </NuxtLink>
+          <NuxtLink
+            to="/certifications"
+            class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 dark:text-white hover:text-gray-500 dark:hover:text-gray-300"
+            active-class="border-b-2 border-primary text-primary dark:text-primary"
+          >
+            Certifications
+          </NuxtLink>
         </div>
         <div class="flex items-center">
           <IconDarkModeToggle />
