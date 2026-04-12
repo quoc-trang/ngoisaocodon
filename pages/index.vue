@@ -1,6 +1,6 @@
 <template>
   <section class="flex flex-col items-start relative text-base dark:text-white">
-    <div class="mt-10">
+    <div>
       <h1 class="font-bold inline-block text-3xl animate-slide-up">
         Le Quoc Trang
       </h1>

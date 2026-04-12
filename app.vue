@@ -15,6 +15,10 @@ onMounted(() => {
 </script>
 
 <style>
+html {
+  scrollbar-gutter: stable;
+}
+
 html, body {
   margin: 0;
   padding: 0;

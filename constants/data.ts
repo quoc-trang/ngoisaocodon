@@ -68,25 +68,27 @@ export const LANDING_PAGES = [
   },
 ]
 
+/** ISO date YYYY-MM-DD; sort and display use issuedAt. expiresAt only when the issuer provides one. */
 export const CERTIFICATIONS = [
   {
     name: 'Associate Cloud Engineer',
     organization: 'Google Cloud',
-    date: '2023',
+    issuedAt: '2026-01-09',
+    expiresAt: '2029-01-09',
     url: 'https://www.credly.com/badges/0cc63d86-b019-48f3-92b5-8b740e6c297c/linked_in_profile',
     logo: 'logos:google-cloud',
   },
   {
     name: 'Certified LeSS Practitioner',
     organization: 'LeSS (Large-Scale Scrum)',
-    date: '2022',
+    issuedAt: '2025-05-30',
     url: 'https://less.works/certificates/quoc-trang-le-71590666232.pdf',
     logo: 'simple-icons:scrumalliance',
   },
   {
     name: 'Certified Vue.js Developer',
     organization: 'Vue School',
-    date: '2024',
+    issuedAt: '2024-05-30',
     url: 'https://api.certificates.dev/certificates/9c2ac75a-5a85-46ab-beaf-679ec47225e2/download?signature=c8182a70ea96efde9adffad4232d41b9b8fad1a18b42eccdc1c9f9f360a6c043',
     logo: 'logos:vue',
   },

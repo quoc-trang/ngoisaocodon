@@ -1,6 +1,6 @@
 <template>
-  <section class="py-10">
-    <div class="max-w-3xl mx-auto px-4">
+  <section class="w-full">
+    <div class="w-full">
       <h2 class="text-3xl font-bold mb-8 text-gray-900 dark:text-white animate-slide-up">
         Professional Experience
       </h2>

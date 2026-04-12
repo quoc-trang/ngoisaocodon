@@ -1,5 +1,5 @@
 <template>
-  <section class="max-w-4xl mx-auto py-10 px-4 text-gray-900 dark:text-white">
+  <section class="w-full text-gray-900 dark:text-white">
     <!-- Header -->
     <div class="mb-12 animate-slide-up">
       <h1 class="text-3xl font-bold mb-4">Projects</h1>
